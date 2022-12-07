@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Lab5_PersonalPage.Controllers.ComputerParts>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<p>
+    <a asp-action="Create">Create New Item</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.computerBrand)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.computerPart)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.computerCreatedYear)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.computerPartPrice)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.computerBrand)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.computerPart)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.computerCreatedYear)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.computerPartPrice)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

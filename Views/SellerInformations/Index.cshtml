@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Lab5_PersonalPage.Controllers.SellerInformation>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!--
+This is the page you first enter when user selects that they want to add themselves to the webpage.
+-->
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.First_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Last_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.City_Location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Year_Joined)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Selling_Computer_Part)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Part_Condition)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.First_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Last_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.City_Location)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year_Joined)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Selling_Computer_Part)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Part_Condition)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.SellerID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.SellerID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.SellerID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

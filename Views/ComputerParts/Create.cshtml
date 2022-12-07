@@ -1,0 +1,46 @@
+﻿@model Lab5_PersonalPage.Controllers.ComputerParts
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h4>ComputerParts</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="computerBrand" class="control-label"></label>
+                <input asp-for="computerBrand" class="form-control" />
+                <span asp-validation-for="computerBrand" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="computerPart" class="control-label"></label>
+                <input asp-for="computerPart" class="form-control" />
+                <span asp-validation-for="computerPart" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="computerCreatedYear" class="control-label"></label>
+                <input asp-for="computerCreatedYear" class="form-control" />
+                <span asp-validation-for="computerCreatedYear" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="computerPartPrice" class="control-label"></label>
+                <input asp-for="computerPartPrice" class="form-control" />
+                <span asp-validation-for="computerPartPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
