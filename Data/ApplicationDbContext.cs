@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Lab5_PersonalPage.Controllers;
+using Lab5_PersonalPage.Models;
 
 namespace Lab5_PersonalPage.Data
 {
@@ -19,5 +20,8 @@ namespace Lab5_PersonalPage.Data
 
         // This gets the data from the Computer Parts Table
         public DbSet<ComputerParts> Parts { get; set; }
+
+        // This gets the data from the Computer Parts Table
+        public DbSet<Lab5_PersonalPage.Models.ForgotPassword> ForgotPassword { get; set; }
     }
 }
